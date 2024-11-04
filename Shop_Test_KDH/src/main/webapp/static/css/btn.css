@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+
+
+.main{
+	color: white; 
+	background-color: gray; 
+	padding: 5px; 
+	border-radius: 20%; 
+	cursor: pointer;
+}
