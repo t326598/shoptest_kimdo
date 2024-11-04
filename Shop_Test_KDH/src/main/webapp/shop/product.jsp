@@ -49,6 +49,9 @@
     if(productId != null){
     	pd = pr.getProductById(productId);
     }
+  
+	List<Product> cartList = (List<Product>)session.getAttribute("cartList");
+
 %>
 
 <div class="px-4 py-5 my-5 text-center">
@@ -86,8 +89,8 @@
 			<p class="product_page">가격:&nbsp;&nbsp; <%= pd.getUnitPrice() %> </p>
 			<hr>
 			<div class="btn-center" style="text-align: center;">
-			<a href="cart_pro.jsp" class="btn btn-warning btn-lg px-4 gap-3" style="margin-right: 50px;">장바구니</a>
-			<a href="order.jsp" class="btn btn-success btn-lg px-4 gap-3">주문하기</a>
+			<a href="cart.jsp" class="btn btn-warning btn-lg px-4 gap-3" style="margin-right: 50px;">장바구니</a>
+			<a href="cart_pro.jsp?id=<%= pd.getProductId() %>"  class="btn btn-success btn-lg px-4 gap-3"  >주문하기</a>
 			</div>
 		</section>
 		</div>
@@ -95,6 +98,8 @@
 </div>
 
 <jsp:include page="/layout/footer.jsp" />
+
+
 
 </body>
 </html>
